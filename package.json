@@ -15,6 +15,12 @@
   "files": [
     "dist/"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/iroh_ffi.d.ts",
+      "import": "./dist/iroh_ffi.js"
+    }
+  },
   "type": "module",
   "types": "dist/iroh_ffi.d.ts",
   "scripts": {
