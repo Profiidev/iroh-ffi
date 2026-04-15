@@ -24,6 +24,7 @@ jobs:
         with:
           cache-on-failure: true
           shared-key: 'linter_cache'
+      - uses: bahmutov/npm-install@v1
 
       - name: Run linters
         uses: profiidev/rust-lint-action@d3a5a7ebf7efe08148b1b9bb02231b0b03934f22 # v4
@@ -31,4 +32,5 @@ jobs:
           rustfmt: true
           clippy: true
           auto_fix: true
+          oxfmt: true
           clippy_args: --target wasm32-unknown-unknown
