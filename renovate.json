@@ -19,5 +19,6 @@
     "vulnerabilityFixStrategy": "highest",
     "schedule": ["at any time"],
     "automerge": true
-  }
+  },
+  "ignoreDeps": ["wasm-bindgen", "wasm-bindgen-futures", "wasm-streams"]
 }
