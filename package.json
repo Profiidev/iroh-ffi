@@ -1,6 +1,6 @@
 {
   "name": "@profidev/iroh-ffi",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Iroh bindings for the Browser.",
   "homepage": "https://github.com/Profiidev/iroh-ffi#readme",
   "bugs": {
