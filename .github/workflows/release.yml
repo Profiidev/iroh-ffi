@@ -29,6 +29,15 @@ jobs:
           node-version: 24
           registry-url: "https://registry.npmjs.org"
         if: ${{ steps.release.outputs.release_created }}
+      - uses: dtolnay/rust-toolchain@29eef336d9b2848a0b548edc03f92a220660cdb8 # stable
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          targets: wasm32-unknown-unknown
+      - name: Install wasm-bindgen
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          curl -L https://github.com/wasm-bindgen/wasm-bindgen/releases/download/0.2.114/wasm-bindgen-0.2.114-x86_64-unknown-linux-musl.tar.gz | tar xz -C /tmp
+          echo "/tmp/wasm-bindgen-0.2.114-x86_64-unknown-linux-musl" >> $GITHUB_PATH
       - run: npm run build:release
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish --provenance --access public
